@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoticIAs Al Momento — Términos y Privacidad</title>
+<style>
+  :root {
+    --paper: #f6f5f1;
+    --paper-raised: #ffffff;
+    --ink: #1c1b19;
+    --ink-soft: #55524a;
+    --accent: #2f5233;
+    --accent-soft: #5c7a54;
+    --rule: #d8d4c9;
+    --rule-strong: #b8b2a2;
+    --mono-chip: #ece9e0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #15171a;
+      --paper-raised: #1c1f23;
+      --ink: #e9e7e0;
+      --ink-soft: #a6a297;
+      --accent: #7fb389;
+      --accent-soft: #5c8a63;
+      --rule: #2c2f33;
+      --rule-strong: #3a3d42;
+      --mono-chip: #22252a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #15171a;
+    --paper-raised: #1c1f23;
+    --ink: #e9e7e0;
+    --ink-soft: #a6a297;
+    --accent: #7fb389;
+    --accent-soft: #5c8a63;
+    --rule: #2c2f33;
+    --rule-strong: #3a3d42;
+    --mono-chip: #22252a;
+  }
+  :root[data-theme="light"] {
+    --paper: #f6f5f1;
+    --paper-raised: #ffffff;
+    --ink: #1c1b19;
+    --ink-soft: #55524a;
+    --accent: #2f5233;
+    --accent-soft: #5c7a54;
+    --rule: #d8d4c9;
+    --rule-strong: #b8b2a2;
+    --mono-chip: #ece9e0;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", Cambria, serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule-strong);
+    padding: 14px max(20px, calc(50% - 360px));
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-family: ui-monospace, "SF Mono", Consolas, "Cascadia Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .masthead strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 20px 96px;
+  }
+
+  header.hero {
+    margin-bottom: 48px;
+  }
+
+  header.hero .eyebrow {
+    font-family: ui-monospace, "SF Mono", Consolas, "Cascadia Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  header.hero h1 {
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 12px;
+    text-wrap: balance;
+    font-weight: 400;
+  }
+
+  header.hero p.dek {
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+
+  .meta-chip {
+    font-family: ui-monospace, "SF Mono", Consolas, "Cascadia Mono", monospace;
+    font-size: 0.74rem;
+    background: var(--mono-chip);
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+
+  nav.toc {
+    display: flex;
+    gap: 4px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 4px;
+    margin-bottom: 56px;
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    background: var(--paper-raised);
+  }
+
+  nav.toc a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 4px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  nav.toc a:hover,
+  nav.toc a:focus-visible {
+    background: var(--mono-chip);
+    color: var(--ink);
+  }
+
+  section.doc {
+    margin-bottom: 64px;
+    scroll-margin-top: 24px;
+  }
+
+  section.doc > h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+  }
+
+  section.doc > p.updated {
+    font-family: ui-monospace, "SF Mono", Consolas, "Cascadia Mono", monospace;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin: 10px 0 36px;
+    letter-spacing: 0.02em;
+  }
+
+  .clause {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 4px 18px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .clause:first-of-type { border-top: none; padding-top: 0; }
+
+  .clause .num {
+    font-family: ui-monospace, "SF Mono", Consolas, "Cascadia Mono", monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    padding-top: 3px;
+  }
+
+  .clause h3 {
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+    grid-column: 2;
+  }
+
+  .clause .num { grid-row: 1; }
+  .clause h3 { grid-row: 1; grid-column: 2; }
+
+  .clause p,
+  .clause ul {
+    grid-column: 2;
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    font-size: 0.97rem;
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  .clause p + p { margin-top: 10px; }
+
+  .clause ul {
+    padding-left: 1.1em;
+    margin-top: 8px;
+  }
+  .clause li { margin-bottom: 6px; }
+  .clause li::marker { color: var(--accent-soft); }
+
+  .clause code {
+    font-family: ui-monospace, "SF Mono", Consolas, "Cascadia Mono", monospace;
+    background: var(--mono-chip);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.88em;
+  }
+
+  .callout {
+    margin-top: 36px;
+    padding: 18px 20px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  .callout strong { color: var(--ink); }
+
+  footer {
+    border-top: 1px solid var(--rule-strong);
+    padding: 28px max(20px, calc(50% - 360px));
+    font-family: ui-monospace, "SF Mono", Consolas, "Cascadia Mono", monospace;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  footer a { color: var(--accent); }
+
+  a { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    .clause { grid-template-columns: 30px 1fr; gap: 4px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span><strong>NoticIAs Al Momento</strong> · Documento legal</span>
+  <span>Uso personal · Cuenta única</span>
+</div>
+
+<main>
+  <header class="hero">
+    <span class="eyebrow">Términos de Servicio &amp; Política de Privacidad</span>
+    <h1>Cómo funciona esta app y qué hacemos con tus datos</h1>
+    <p class="dek">
+      NoticIAs Al Momento es una herramienta de automatización personal que genera videos
+      cortos de noticias y los publica en una única cuenta de TikTok, propiedad del
+      mismo desarrollador. Este documento cubre los dos textos que exige la API de
+      TikTok para registrar la app.
+    </p>
+    <div class="meta-row">
+      <span class="meta-chip">Versión 1.0</span>
+      <span class="meta-chip">Vigente desde 2026-08-07</span>
+      <span class="meta-chip">Un solo usuario</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#terminos">Términos de Servicio</a>
+    <a href="#privacidad">Política de Privacidad</a>
+  </nav>
+
+  <section class="doc" id="terminos">
+    <h2>Términos de Servicio</h2>
+    <p class="updated">Última actualización — 2026-08-07</p>
+
+    <div class="clause">
+      <span class="num">01</span>
+      <h3>Qué es esta app</h3>
+      <p>
+        NoticIAs Al Momento genera videos cortos de noticias a partir de fuentes RSS
+        públicas de medios reconocidos (BBC Mundo, Infobae, France 24 Español), con
+        guion narrado por un modelo de lenguaje local, voz sintética, subtítulos e
+        imágenes ilustrativas de fuentes con licencia abierta. El resultado se publica
+        en <strong>una única cuenta de TikTok</strong>, operada por la misma persona
+        que desarrolla y administra la app.
+      </p>
+    </div>
+
+    <div class="clause">
+      <span class="num">02</span>
+      <h3>Alcance del uso</h3>
+      <p>
+        Esta app no está distribuida a terceros ni ofrecida como servicio público.
+        No crea cuentas, no publica en nombre de otros usuarios y no accede a datos
+        de ninguna cuenta de TikTok distinta a la del propio desarrollador.
+      </p>
+    </div>
+
+    <div class="clause">
+      <span class="num">03</span>
+      <h3>Origen y edición del contenido</h3>
+      <p>
+        Cada video se arma automáticamente, pero pasa por una etapa de revisión antes
+        de publicarse: el guion se contrasta contra el título y resumen originales de
+        la noticia para detectar posibles imprecisiones del modelo de lenguaje antes
+        de que el contenido salga al aire.
+      </p>
+    </div>
+
+    <div class="clause">
+      <span class="num">04</span>
+      <h3>Sin garantías</h3>
+      <p>
+        La app se ofrece "tal cual", sin garantía de disponibilidad continua ni de
+        ausencia total de errores. Es un proyecto personal, no un servicio comercial
+        con niveles de soporte garantizados.
+      </p>
+    </div>
+
+    <div class="clause">
+      <span class="num">05</span>
+      <h3>Cambios a estos términos</h3>
+      <p>
+        Estos términos pueden actualizarse a medida que la app cambia. La versión
+        vigente siempre queda publicada en esta misma dirección.
+      </p>
+    </div>
+  </section>
+
+  <section class="doc" id="privacidad">
+    <h2>Política de Privacidad</h2>
+    <p class="updated">Última actualización — 2026-08-07</p>
+
+    <div class="clause">
+      <span class="num">01</span>
+      <h3>Qué datos se manejan</h3>
+      <p>Lo único que la app almacena relacionado con TikTok es:</p>
+      <ul>
+        <li>El <code>access token</code> y <code>refresh token</code> obtenidos al autorizar la app con la cuenta del propio desarrollador.</li>
+        <li>Los videos, imágenes y textos generados localmente para publicar.</li>
+      </ul>
+      <p>No se recolectan datos de espectadores, seguidores ni de ninguna otra cuenta de TikTok.</p>
+    </div>
+
+    <div class="clause">
+      <span class="num">02</span>
+      <h3>Para qué se usan</h3>
+      <p>
+        Los tokens se usan exclusivamente para autenticar las llamadas a la Content
+        Posting API que publican contenido en la cuenta del propio desarrollador.
+        No se usan para leer, analizar ni exportar información de la cuenta.
+      </p>
+    </div>
+
+    <div class="clause">
+      <span class="num">03</span>
+      <h3>Con quién se comparte</h3>
+      <p>
+        Con nadie. Los tokens y el contenido generado se quedan en el entorno local
+        donde corre la app; no se envían a terceros ni se usan con fines publicitarios.
+      </p>
+    </div>
+
+    <div class="clause">
+      <span class="num">04</span>
+      <h3>Retención y revocación</h3>
+      <p>
+        Los tokens se conservan solo mientras la app siga en uso. Se pueden revocar
+        en cualquier momento desde la configuración de la cuenta de TikTok
+        (Ajustes → Seguridad → Apps conectadas), lo que corta el acceso de inmediato.
+      </p>
+    </div>
+
+    <div class="clause">
+      <span class="num">05</span>
+      <h3>Contacto</h3>
+      <p>
+        Preguntas sobre esta política: <a href="mailto:dolynkocode@gmail.com">dolynkocode@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="callout">
+      <strong>Nota de contexto:</strong> esta app no tiene interfaz web ni visitantes —
+      es una herramienta de automatización que corre localmente. Esta página existe
+      únicamente para cumplir con el requisito de URLs de Términos/Privacidad del
+      registro de apps de TikTok for Developers.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>NoticIAs Al Momento</span>
+  <span><a href="mailto:dolynkocode@gmail.com">dolynkocode@gmail.com</a></span>
+</footer>
+
+</body>
+</html>
